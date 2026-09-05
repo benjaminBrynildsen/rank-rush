@@ -1,1 +1,60 @@
-<placeholder-will-fail-if-too-short>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Rank Rush</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="title-row">
+        <h1>RANK RUSH</h1>
+        <div class="seed" id="seedLabel"></div>
+      </div>
+      <div class="hud">
+        <div class="stat"><b id="hRank">2</b><span>King rank</span></div>
+        <div class="stat"><b id="hCap">0</b><span>Captures</span></div>
+        <div class="stat"><b id="hScore">0</b><span>Score</span></div>
+        <div class="stat"><b id="hPawn">8</b><span>To pawn</span></div>
+        <div class="stat"><b id="hWake">3</b><span>To wake</span></div>
+      </div>
+      <div class="msg" id="msg">Tap the knight. Climb the road.</div>
+    </header>
+    <div id="boardWrap">
+      <div id="board"></div>
+      <div class="files" id="files"></div>
+    </div>
+    <footer>
+      <button type="button" class="ghost" id="btnHelp">Rules</button>
+      <button type="button" id="btnRestart">New run</button>
+    </footer>
+  </div>
+  <div class="overlay" id="startOv">
+    <div class="card">
+      <h2>Rank Rush</h2>
+      <p>You start with a <b>king</b> and a <b>knight</b> on an 8-wide road that never ends.</p>
+      <p>Capture with the king or knight and that piece joins at the rear. Every 8 moves a pawn appears. The wake eats the board behind you.</p>
+      <p>Get the king as far as you can. If he falls, the run is over.</p>
+      <button type="button" id="btnGo">March</button>
+    </div>
+  </div>
+  <div class="overlay hidden" id="promoOv">
+    <div class="card">
+      <h2>Promote</h2>
+      <p>Your pawn reached its eighth rank.</p>
+      <div class="choices" id="promoChoices"></div>
+    </div>
+  </div>
+  <div class="overlay hidden" id="overOv">
+    <div class="card">
+      <h2 id="overTitle">Fallen</h2>
+      <p id="overBody"></p>
+      <button type="button" id="btnAgain">Run again</button>
+    </div>
+  </div>
+  <script src="game1.js"></script>
+  <script src="game2.js"></script>
+</body>
+</html>
